@@ -38,11 +38,31 @@ export default class Photos extends Component {
       <div className="photos section" id="Photos">
         <div className="container">
           <div className="section-head">
-            <h2>Photos</h2>
+            <h2>Fotograflar</h2>
           </div>
           <div className="slider-section photos-list">
-            <Slider {...settings}>
-              {data.photos.slice(0, 9).map((item, index) => {
+
+            {/* <Slider {...settings}> */}
+            <div className="category-cover-container">
+              {data.edges.map((item, index) => {
+                return (
+                  <div key={index} className="photos-item category-cover-item">
+                    <a href="/photos">
+                      <Img
+                        fluid={item.node.cover.fluid}
+                        // objectFit="cover"
+                        // objectPosition="50% 50%"
+                      />
+                      <h3>
+                          {item.node.title}
+                        </h3>
+                    </a>
+                  </div>
+                )
+              })}
+            </div>
+            {/* </Slider> */}
+            {/* {data.photos.slice(0, 9).map((item, index) => {
                 return (
                   <div key={index} className="photos-item">
                     <Img
@@ -52,16 +72,15 @@ export default class Photos extends Component {
                     />
                   </div>
                 );
-              })}
-            </Slider>
+              })} */}
           </div>
           <div className="see-more">
-            <Link to="/photos">
+            {/* <Link to="/photos">
               <span>More Photo</span>
-            </Link>
+            </Link> */}
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
-import Img from "gatsby-image";
+// import Slider from "react-slick";
+import '../style/footer.css'
 var settings = {
   dots: true,
   speed: 500,
@@ -15,36 +15,8 @@ export default class Testimonial extends Component {
   render() {
     const { data } = this.props;
     return (
-      <div className="slider-section section testimonials" id="Testimonials">
-        <div className="container">
-          <div className="section-head text-center">
-            <h2>Testimonials</h2>
-            <p>People I've worked with have said some nice things...</p>
-          </div>
-          <Slider {...settings}>
-            {data.edges.map((item, index) => {
-              return (
-                <div key={index} className="testimonials-item">
-                  <div className="testi-inner">
-                    <Img
-                      className="avatar"
-                      fluid={item.node.avatarImage.fluid}
-                      objectFit="cover"
-                      objectPosition="50% 50%"
-                    />
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: item.node.description.childMarkdownRemark.html
-                      }}
-                    />
-                    <h3 className="name">{item.node.name}</h3>
-                    <span className="sub-name">{item.node.subTitle}</span>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
+      <div className="footer-container">
+        3
       </div>
     );
   }

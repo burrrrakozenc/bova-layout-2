@@ -8,9 +8,9 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `Rohit Gupta`,
-    description: `Personal Site`,
-    author: `@rohitguptab`
+    title: `BOVA`,
+    description: `Bova`,
+    author: `@burakozenc`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,11 +22,13 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-source-contentful",
+      resolve: `gatsby-source-contentful`,
       options: {
-        spaceId,
-        accessToken
-      }
+        spaceId: `pvnvm39tudgg`,
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: `6AMRRMxRP_RR4tiYEf6ODqE15C-0qSjTlJ3F8vogL5s`,
+        // downloadLocal: true,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -42,6 +44,7 @@ module.exports = {
         icon: `src/images/fev_icon.png` // This path is relative to the root of the site.
       }
     }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality
+    pathPrefix: "/bova-layout-2", 
     `gatsby-plugin-offline`
   ]
 };

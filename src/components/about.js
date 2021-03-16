@@ -8,7 +8,8 @@ const Header = ({ data }) => (
         <div className="left col-md-5 col-lg-4 mb-3">
           <Img
             fluid={data.photo.fluid}
-            objectFit="cover"
+             objectFit="cover"
+             
             objectPosition="top center"
           />
         </div>

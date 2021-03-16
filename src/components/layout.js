@@ -2,12 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.css";
+// import { ParallaxProvider } from 'react-scroll-parallax';
 
 import Header from "./header";
-import Footer from "./footer";
+// import Footer from "./testimonial";
 
-import "../css/style.css";
-import "../css/font-awesome.css";
+import "../style/style.css";
+import "../style/font-awesome.css";
 
 if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
@@ -25,22 +26,26 @@ const Layout = ({ children, header }) => (
               url
             }
           }
-          menus
         }
       }
     `}
-    
+
     render={data => (
       <>
-        <Header
-          data={data.contentfulSiteInformation}
-          siteTitle={data.contentfulSiteInformation.siteName}
-          header={header}
-        />
-        <div>
-          <main id="home">{children}</main>
+        <div className="body-wrapper">
+          {/* <ParallaxProvider> */}
+            <Header
+              data={data.contentfulSiteInformation}
+              siteTitle={data.contentfulSiteInformation.siteName}
+              header={header}
+            />
+            <div>
+              <main id="home">{children}</main>
+            </div>
+            {/* <Footer/> */}
+            {/* <Footer siteName={data.contentfulSiteInformation.siteName} /> */}
+          {/* </ParallaxProvider> */}
         </div>
-        <Footer siteName={data.contentfulSiteInformation.siteName} />
       </>
     )}
   />
